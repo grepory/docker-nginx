@@ -24,8 +24,7 @@ RUN cd /tmp/src/${NGINX_VERSION} && \
 # Clean up
 RUN apk del build-base && \
     rm -rf /tmp/src && \
-    rm -rf /var/cache/apk/* && \
-    rm -f /etc/nginx/conf.d/default.conf /etc/nginx/conf.d/example_ssl.conf
+    rm -rf /var/cache/apk/*
 
 RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
     ln -s /dev/stderr /var/log/nginx/error.log
